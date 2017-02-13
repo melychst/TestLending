@@ -2,7 +2,7 @@
 <div class="navigation fixed-menu">
 	<div class="container">
 		<div class="row clearfix">
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-3 col-xs-3">
 				<div class="logo">
 					<div class="name">
 						<span>MILLI</span>DESIGN
@@ -12,7 +12,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 navigation">
+			<div class="col-md-4 col-sm-6 col-xs-6 navigation">
 				<nav>
 
 					<?php 
@@ -20,13 +20,13 @@
 					?>
 				</nav>
 			</div>
-			<div class="col-md-3 contacts">
+			<div class="col-md-3 col-sm-3 col-xs-3 contacts">
 				<div class="cont">
 					<span><i class="fa fa-phone" aria-hidden="true"></i>+7(495) 648-68-01</span>
 					<span><i class="fa fa-clock-o" aria-hidden="true"></i>10:00-18:00 ПН-ПТ</span>
 				</div>
 			</div>
-			<div class="col-md-3 callback">
+			<div class="col-md-3 col-sm-4 col-xs-4 callback">
 				<div class="btn-callback">
 					<a href="#">Обратний звонок</a>
 				</div>
@@ -60,7 +60,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="co-md-12">
-				<h2><?php echo get_field("title_section_why_us");?></h2>
+				<h2 class="anim_right"><?php echo get_field("title_section_why_us");?></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -75,7 +75,7 @@
 					$anim = "anim_about_".$i++;
 
 		?>
-			<div class="col-md-3 <?php echo $anim?>">
+			<div class="col-md-3 col-sm-3 <?php echo $anim?>">
 				<div class="wrap-item">
 					<img src="<?php echo $value["image_why_us_item"]["url"]?>" alt="<?php echo $value["image_why_us_item"]["alt"]?>">
 				</div>
@@ -138,8 +138,8 @@
 	$descriptPortfolio = get_field("description_portfolio_section");
 ?>
 <div id="<?php echo get_field("portfolio_id_section")?>" class="portfolio"> <!--start portfolio -->
-	<h2 class="title-section"><?php echo $titlePortfolio ?></h2>
-	<p class="descript-section"><?php echo $descriptPortfolio ?></p>
+	<h2 class="title-section anim_right"><?php echo $titlePortfolio ?></h2>
+	<p class="descript-section anim_left"><?php echo $descriptPortfolio ?></p>
 
 	<div class="portfolio-items">
 		<?php  
@@ -148,7 +148,7 @@
 			foreach ($portfolioItems as $key => $value)  {	
 		?>
 		
-		<div class="col-md-3 portfolio-item-wrap">
+		<div class="col-md-3 col-sm-3 portfolio-item-wrap">
 			<div class="portfolio-item">
 				<div class="block-link">
 					<a href="<?php echo get_field("project_link", $value["portfolio_project"]->ID) ?>" target=_blank><i class="fa fa-link" aria-hidden="true"></i></a></span>
@@ -170,8 +170,8 @@
 </div><!--end portfolio -->
 
 <div id="<?php echo get_field("price_id_section")?>" class="price"> <!--start price -->
-	<h2 class="title-section"><?php echo get_field("title_section_price");?></h2>
-	<p class="descript-section"><?php echo get_field("description_section_price");?></p>
+	<h2 class="title-section anim_right"><?php echo get_field("title_section_price");?></h2>
+	<p class="descript-section anim_left"><?php echo get_field("description_section_price");?></p>
 
 	<div class="price-items">
 		<div class="container">
@@ -180,9 +180,11 @@
 			<?php 
 
 				$priceItems = get_field("price_items");
-
+				$i = 1;
 				if ( $priceItems ) {
 					foreach ($priceItems as $key => $value) {
+
+						$anim_price = "anim_about_".$i++; 
 
 						if ( $value["active"] ) {
 							$active = 'active';
@@ -193,7 +195,7 @@
 						$id = $value["price_item"]->ID;
 			?>
 
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-4 <?php echo $anim_price ?>">
 					<div class="price-item <?php echo $active ?>">
 						<div class="head-item"><?php echo $value["price_item"]->post_title?></div>
 						<div class="body-item">
@@ -240,14 +242,14 @@
 	</div>
 </div> <!-- end price -->
 
-<div id="contacts" class="map"> <!--start map -->
-	<div class="wrap-map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24334.73882285247!2d25.255202123321716!3d50.12607350732446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472ff65e8844dbab%3A0xb7db889b9d788f65!2z0LLRg9C70LjRhtGPINCd0LXQstGB0YzQutC-0LPQviwgMTAsINCg0LDQtNC40LLQuNC70ZbQsiwg0KDRltCy0L3QtdC90YHRjNC60LAg0L7QsdC70LDRgdGC0Yw!5e0!3m2!1suk!2sua!4v1486901780558" width="100%" height="530" frameborder="0" style="border:0" allowfullscreen></iframe>		
+<div id="contacts" class="map embed-container"> <!--start map -->
+	<div class="wrap-map embed-container maps">
+		<iframe style="pointer-events: none" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24334.73882285247!2d25.255202123321716!3d50.12607350732446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472ff65e8844dbab%3A0xb7db889b9d788f65!2z0LLRg9C70LjRhtGPINCd0LXQstGB0YzQutC-0LPQviwgMTAsINCg0LDQtNC40LLQuNC70ZbQsiwg0KDRltCy0L3QtdC90YHRjNC60LAg0L7QsdC70LDRgdGC0Yw!5e0!3m2!1suk!2sua!4v1486901780558" width="100%" height="530" frameborder="0" style="border:0" allowfullscreen></iframe>		
 	</div>
 
 	<div class="container wrap-request-form">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-5 col-xl-5">
 				<div class="request-form">
 					<form method="POST" action="#">
 						<div class="title-form">Оформить заказ</div>
