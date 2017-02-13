@@ -249,7 +249,7 @@ header .main-header {
           .portfolio .portfolio-item-wrap .portfolio-item .portfolio-descript .content-descript p.name {
             font-size: 14px;
             font-family: Roboto-Black; }
-  .portfolio .portfolio-item-wrap:hover .portfolio-item {
+  .portfolio .portfolio-item-wrap:hover .portfolio-itemd {
     display: block; }
 
 .price {

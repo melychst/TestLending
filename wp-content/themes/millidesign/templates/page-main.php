@@ -41,13 +41,13 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="title">
-						<h1><?php echo get_field("title_section_header_main"); ?></h1>
-						<h2><?php echo get_field("description_section_header_main"); ?></h2>
+						<h1 class="anim_right"><?php echo get_field("title_section_header_main"); ?></h1>
+						<h2 class="anim_left"><?php echo get_field("description_section_header_main"); ?></h2>
 					</div>
-					<div class="descript-price">
+					<div class="descript-price anim">
 						<?php echo get_field("min_price_header_main"); ?>
 					</div>
-					<div class="btn-callback">
+					<div class="btn-callback anim">
 						<a href="#">Отправить заявку</a>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 	</div>
 </header> <!--end header -->
 
-<div id="<?php echo get_field("why_us_id_section")?>"class="why-us"> <!--start why us -->
+<div id="<?php echo get_field("why_us_id_section")?>" class="why-us anim"> <!--start why us -->
 	<div class="container">
 		<div class="row">
 			<div class="co-md-12">
@@ -69,10 +69,13 @@
 			$whyItems = get_field("why_us_items");
 
 			if ( $whyItems ) {
+				$i = 1;
 				foreach ($whyItems as $key => $value) {
 
+					$anim = "anim_about_".$i++;
+
 		?>
-			<div class="col-md-3">
+			<div class="col-md-3 <?php echo $anim?>">
 				<div class="wrap-item">
 					<img src="<?php echo $value["image_why_us_item"]["url"]?>" alt="<?php echo $value["image_why_us_item"]["alt"]?>">
 				</div>
@@ -88,6 +91,9 @@
 	</div>
 </div> <!--end why us -->
 
+
+<div id="slider" class="owl-carousel">
+	
 <?php
 	$sliders = get_field('sliders');
 
@@ -98,7 +104,8 @@
 			$bgSlider = get_field("background_image", $value["slider"]->ID);
 			$imgSlider = get_field("image", $value["slider"]->ID);
 ?>
-<div"class="slider" style="background-image: url(<?php echo $bgSlider["url"] ?>)"> <!--start slider -->
+
+<div class="slider" style="background-image: url(<?php echo $bgSlider["url"] ?>)"> <!--start slider -->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
@@ -121,6 +128,9 @@
 		}
 		}
 ?>
+
+</div>
+
 
 
 <?php 
@@ -252,3 +262,20 @@
 		</div>
 	</div>
 </div> <!-- end map -->
+
+
+<script>
+	
+			jQuery("#slider").owlCarousel({
+			items:1,
+			nav: true,
+			loop:true,
+			pagination: true,
+			dots: true,
+			autoplay:true,
+			autoPlay:5,
+			navText : ["&nbsp;","&nbsp;"],
+		});
+
+
+</script>
