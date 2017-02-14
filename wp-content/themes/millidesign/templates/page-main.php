@@ -3,14 +3,14 @@
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-2 col-sm-3 col-xs-3">
+				<a href="#home">
+
 				<div class="logo">
-					<div class="name">
-						<span>MILLI</span>DESIGN
-					</div>
-					<div class="descript">
-						<p>РАЗРАБОТКА ЛЕНДИНГОВ</p>
-					</div>
-				</div>
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo_main.png" alt="">
+				</div>					
+
+				</a>
+
 			</div>
 			<div class="col-md-4 col-sm-6 col-xs-6 navigation">
 				<nav>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="col-md-3 col-sm-4 col-xs-4 callback">
 				<div class="btn-callback">
-					<a href="#">Обратний звонок</a>
+					<a href="javascript:void(0)">Обратний звонок</a>
 				</div>
 			</div>
 			<div class="mobile-menu">
@@ -55,10 +55,18 @@
 						<h2 class="anim_left"><?php echo get_field("description_section_header_main"); ?></h2>
 					</div>
 					<div class="descript-price anim">
+					<?php
+						$sale = get_field("sale_header");
+						if ( $sale ) {
+					?>
+						<div class="sale-header"><img src="<?php echo $sale["url"] ?>"></div>
+					<?php
+						}
+					?>
 						<?php echo get_field("min_price_header_main"); ?>
 					</div>
 					<div class="btn-callback anim">
-						<a href="#">Отправить заявку</a>
+						<a href="javascript:void(0)">Отправить заявку</a>
 					</div>
 				</div>
 			</div>
@@ -163,17 +171,19 @@
 		<?php  
 			$portfolioItems = get_field("portfolio_items");
 			
-			foreach ($portfolioItems as $key => $value)  {	
+			foreach ($portfolioItems as $key => $value)  {
+			$projID = $value["portfolio_project"]->ID;
+			$projPrev = get_field("image_of_design", $projID);
 		?>
 		
-		<div class="col-md-3 col-sm-3 portfolio-item-wrap">
+		<div class="col-md-3 col-sm-3 col-xs-6 portfolio-item-wrap" style="background-image: url(<?php echo $projPrev['url']?>);">
 			<div class="portfolio-item">
 				<div class="block-link">
-					<a href="<?php echo get_field("project_link", $value["portfolio_project"]->ID) ?>" target=_blank><i class="fa fa-link" aria-hidden="true"></i></a></span>
+					<a href="<?php echo get_field("project_link", $projID) ?>" target=_blank><i class="fa fa-link" aria-hidden="true"></i></a></span>
 				</div>
 				<div class="portfolio-descript">
 					<div class="content-descript">
-						<p class="author"><?php echo get_field("author_of_design", $value["portfolio_project"]->ID) ?></p>
+						<p class="author"><?php echo get_field("author_of_design", $projID) ?></p>
 						<p class="name"><?php echo $value["portfolio_project"]->post_title;?></p>					
 					</div>
 				</div>
@@ -252,7 +262,7 @@
 						</div>
 						<div class="footer-item">
 							<div class="btn-send-request">
-								<a href="">отправить заявку</a>
+								<a href="javascript:void(0)">отправить заявку</a>
 							</div>								
 						</div>
 					</div>
@@ -274,7 +284,7 @@
 
 	<div class="container wrap-request-form">
 		<div class="row">
-			<div class="col-md-4 col-sm-5 col-xl-5">
+			<div class="col-md-4 col-sm-5">
 				<div class="request-form">
 					<form method="POST" action="#">
 						<div class="title-form">Оформить заказ</div>
@@ -282,7 +292,6 @@
 						<input type="text" placeholder="Адрес эл. почты">
 						<input type="text" placeholder="Телефон">
 						<input type="submit" value="заказать лендинг">
-
 					</form>
 				</div>
 			</div>
@@ -290,6 +299,19 @@
 	</div>
 </div> <!-- end map -->
 
+<div class="popup-window">
+	
+	<div class="request-form">
+		<div class="close-popup"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<form method="POST" action="#">
+			<div class="title-form">Оформить заказ</div>
+			<input type="text" placeholder="ФИО">
+			<input type="text" placeholder="Адрес эл. почты">
+			<input type="text" placeholder="Телефон">
+			<input type="submit" value="заказать лендинг">
+		</form>
+	</div>
+</div>
 
 <script>
 	

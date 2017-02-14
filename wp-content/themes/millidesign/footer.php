@@ -1,12 +1,12 @@
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-4 col-xs-4">
 					<div class="footer-logo">
 						<img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" alt="">
 					</div>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-8 col-sm-8 col-xs-8">
 					<div class="footer-copyright">
 						<p>© 2015 - MILLIDESIGN. Все права защищены</p>
 					</div>

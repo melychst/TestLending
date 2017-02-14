@@ -37,7 +37,10 @@
     margin-bottom: 40px; }
 
   header .main-header .title h1 {
-    line-height: 36px; } }
+    line-height: 36px; }
+
+  .map .request-form {
+    width: 50%; } }
 @media (max-width: 730px) {
   .navigation .contacts {
     display: none; }
@@ -85,6 +88,9 @@
           background-color: rgba(50, 50, 50, 0.9); }
         .navigation .mobile-menu ul li a:hover {
           background-color: rgba(250, 250, 250, 0.9);
-          color: #323232; } }
+          color: #323232; }
+
+  .map .request-form {
+    width: 100%; } }
 
 /*# sourceMappingURL=responsive.css.map */

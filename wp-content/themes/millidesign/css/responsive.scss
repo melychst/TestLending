@@ -89,7 +89,12 @@
 			}
 
 		}
-	}	
+	}
+	.map {
+		.request-form {
+			width: 50%;
+		}
+	}
 }
 
 @media (max-width: 730px) {
@@ -163,6 +168,11 @@
 			}
 		}			
 	}
+	.map {
+		.request-form {
+			width: 100%;
+		}
+	}	
 
 }
 
