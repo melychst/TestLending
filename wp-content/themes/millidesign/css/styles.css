@@ -16,11 +16,11 @@
 @font-face {
   font-family: Roboto-Thin;
   src: url("fonts/Roboto-Thin.ttf"); }
+@font-face {
+  font-family: FontAwesome;
+  src: url("fonts/fontawesome-webfont.ttf"); }
 body {
   font-family: Oswald-Regular; }
-
-.fa {
-  font-family: FontAwesome; }
 
 .btn-callback {
   text-align: center;
@@ -110,6 +110,13 @@ p.descript-section {
         font-size: 16px; }
     .navigation .contacts .cont span:last-child {
       margin-right: 0px; }
+  .navigation .mobile-menu {
+    display: none; }
+    .navigation .mobile-menu .wrap-mobile-menu {
+      display: none; }
+
+.head-siection {
+  padding: 0px 15px; }
 
 header .main-header {
   background-image: url("../img/main-header-bg.jpg");
@@ -205,6 +212,42 @@ header .main-header {
       padding-left: 10px;
       color: #ffffff;
       font-size: 16px; }
+
+#slider.owl-carousel {
+  position: relative; }
+  #slider.owl-carousel .owl-controls .owl-prev, #slider.owl-carousel .owl-controls .owl-next {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: #ffffff solid 2px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 45%; }
+  #slider.owl-carousel .owl-controls .owl-prev {
+    left: 20px; }
+  #slider.owl-carousel .owl-controls .owl-next {
+    right: 20px; }
+  #slider.owl-carousel .owl-controls .owl-prev:hover {
+    border: #cccccc solid 2px; }
+  #slider.owl-carousel .owl-controls .owl-next:hover {
+    border: #cccccc solid 2px; }
+  #slider.owl-carousel .owl-controls .owl-prev:before {
+    content: "\f053";
+    font-family: FontAwesome;
+    color: #ffffff;
+    font-size: 28px;
+    position: absolute;
+    top: 0px;
+    left: 5px; }
+  #slider.owl-carousel .owl-controls .owl-next:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    color: #ffffff;
+    font-size: 28px;
+    position: absolute;
+    top: 0px;
+    left: 10px; }
 
 .portfolio {
   padding-top: 70px; }

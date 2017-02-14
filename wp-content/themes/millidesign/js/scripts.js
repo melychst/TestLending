@@ -55,4 +55,21 @@
 		});
 	});
 
+  $(function () {
+  	$(".mobile-menu .menu-icon").click(function (){
+  		if ( $(".mobile-menu .wrap-mobile-menu").css("display") == "none" ) {
+ 			$(".mobile-menu .wrap-mobile-menu").fadeIn(300);
+  			//$(".mobile-menu .wrap-mobile-menu").css("display", "block")
+  		} else {
+  			$(".mobile-menu .wrap-mobile-menu").fadeOut(300);
+  		}
+  	})
+  })
+
+  $(function () {
+  	$(".mobile-menu .wrap-mobile-menu a").click(function (){
+ 		$(".mobile-menu .wrap-mobile-menu").fadeOut(200);
+  	})
+  })
+
 })(jQuery)

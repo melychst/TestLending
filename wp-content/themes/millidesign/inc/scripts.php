@@ -6,7 +6,11 @@ function include_scripts()
 	
 	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/fonts/font-awesome.min.css' );
 
-	wp_enqueue_style( 'owl-carousel', get_stylesheet_directory_uri() . '/css/owl.carousel.css' );	
+	wp_enqueue_style( 'iconics', get_stylesheet_directory_uri() . '/css/ionicons.min.css' );
+
+	wp_enqueue_style( 'owl-carousel', get_stylesheet_directory_uri() . '/css/owl.carousel.css' );
+
+	wp_enqueue_style( 'animation', get_stylesheet_directory_uri() . '/css/animate.css' );	
 
 	wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/css/styles.css' );
 

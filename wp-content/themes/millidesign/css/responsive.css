@@ -34,11 +34,57 @@
     top: 0px; }
 
   .why-us .col-md-3 {
-    margin-bottom: 40px; } }
+    margin-bottom: 40px; }
+
+  header .main-header .title h1 {
+    line-height: 36px; } }
 @media (max-width: 730px) {
   .navigation .contacts {
     display: none; }
   .navigation .callback {
-    display: none; } }
+    display: none; }
+  .navigation .navigation {
+    width: 70%;
+    text-align: right; }
+
+  header .main-header .descript-price {
+    font-size: 28px; }
+    header .main-header .descript-price .fa {
+      font-size: 26px; } }
+@media (max-width: 620px) {
+  .head-siection {
+    padding: 0px 15px; }
+
+  .navigation .navigation {
+    display: none; }
+  .navigation .logo {
+    width: 130px; }
+  .navigation .mobile-menu {
+    display: block;
+    margin-top: 18px; }
+    .navigation .mobile-menu .menu-icon {
+      text-align: right;
+      font-size: 34px;
+      margin-right: 15px;
+      cursor: pointer;
+      display: block; }
+    .navigation .mobile-menu ul {
+      padding: 0px;
+      margin-top: 14px;
+      text-align: center; }
+      .navigation .mobile-menu ul li {
+        list-style: none;
+        width: 100%;
+        font-size: 16px;
+        font-family: Roboto-Black; }
+        .navigation .mobile-menu ul li a {
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+          padding: 15px 0px;
+          background-color: rgba(50, 50, 50, 0.9); }
+        .navigation .mobile-menu ul li a:hover {
+          background-color: rgba(250, 250, 250, 0.9);
+          color: #323232; } }
 
 /*# sourceMappingURL=responsive.css.map */

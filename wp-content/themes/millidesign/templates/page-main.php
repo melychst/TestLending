@@ -31,12 +31,22 @@
 					<a href="#">Обратний звонок</a>
 				</div>
 			</div>
+			<div class="mobile-menu">
+				<div class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+					<div class="wrap-mobile-menu">
+							<?php 
+								wp_nav_menu(array('theme_location' => 'Main menu', 'menu' => 'Main menu', 'container'=> '', 'items_wrap' => '<ul><li><a class="active" href="#home"><i class="fa fa-home" aria-hidden="true"></i></a></li>%3$s</ul>')) 
+							?>						
+					
+					</div>
+			</div>
 		</div>
 	</div>			
 </div>
 
 <header id="home"><!--start header --> 
 	<div class="main-header">
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -53,6 +63,7 @@
 				</div>
 			</div>
 		</div>
+	
 	</div>
 </header> <!--end header -->
 
@@ -115,7 +126,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="content-colum">
-					<div class="title-slide"><?php echo $value["slider"]->post_title ?></div>
+					<div class="title-slide animated bounceInDown"><?php echo $value["slider"]->post_title ?></div>
 					<div class="descript-slide"><?php echo $value["slider"]->post_content ?></div>
 					<div class="read-more-slide"><a href="<?php echo get_permalink($value["slider"]->ID) ?>">подробнее <i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>					
 				</div>
@@ -138,8 +149,15 @@
 	$descriptPortfolio = get_field("description_portfolio_section");
 ?>
 <div id="<?php echo get_field("portfolio_id_section")?>" class="portfolio"> <!--start portfolio -->
-	<h2 class="title-section anim_right"><?php echo $titlePortfolio ?></h2>
-	<p class="descript-section anim_left"><?php echo $descriptPortfolio ?></p>
+
+	<div class="head-siection">
+		<div class="container">
+			<div class="row">
+				<h2 class="title-section anim_right"><?php echo $titlePortfolio ?></h2>
+				<p class="descript-section anim_left"><?php echo $descriptPortfolio ?></p>
+			</div>
+		</div>
+	</div>
 
 	<div class="portfolio-items">
 		<?php  
@@ -170,8 +188,15 @@
 </div><!--end portfolio -->
 
 <div id="<?php echo get_field("price_id_section")?>" class="price"> <!--start price -->
-	<h2 class="title-section anim_right"><?php echo get_field("title_section_price");?></h2>
-	<p class="descript-section anim_left"><?php echo get_field("description_section_price");?></p>
+
+	<div class="head-siection">
+		<div class="container">
+			<div class="row">
+		<h2 class="title-section anim_right"><?php echo get_field("title_section_price");?></h2>
+		<p class="descript-section anim_left"><?php echo get_field("description_section_price");?></p>
+			</div>
+		</div>
+	</div>
 
 	<div class="price-items">
 		<div class="container">
